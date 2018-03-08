@@ -20,7 +20,7 @@ var movies = [
 	}
 ];
 
-var serials = [
+var tvShows = [
 	{
 		id: 1,
 
@@ -50,8 +50,6 @@ var serials = [
 
 		image: 'http://images.amcnetworks.com/amc.com/wp-content/uploads/2010/12/breaking-bad-S5-400x600-compressedV1.jpg'
 	}
-
-
 ];
 
 var moviesElements = movies.map(function(movie) {
@@ -63,27 +61,21 @@ var moviesElements = movies.map(function(movie) {
 });
 
 
-var serialElements = serials.map(function(serial) {
-
-	return React.createElement('li', {key: serial.id},
-
-		React.createElement('h2', {}, serial.title),
-
-		React.createElement('p', {}, serial.desc),
-
-		React.createElement('img', {src: serial.image})
-
+var tvShowElements = tvShows.map(function(tvShow) {
+	return React.createElement('li', {key: tvShow.id},
+		React.createElement('h2', {}, tvShow.title),
+		React.createElement('p', {}, tvShow.desc),
+		React.createElement('img', {src: tvShow.image})
 	);
 });
 
 
 var element = 
-
 	React.createElement('div', {}, 
 		React.createElement('h1', {}, 'Lista filmów'),
 		React.createElement('ul', {}, moviesElements),
 		React.createElement('h1', {}, 'Lista seriali'),
-		React.createElement('ol', {}, serialElements)
+		React.createElement('ol', {}, tvShowElements)
 	);
 
 ReactDOM.render(element, document.getElementById('app'));
